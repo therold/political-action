@@ -9,6 +9,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="@dimen/splash_header_height"
+        android:id="@+id/splash_background"
         android:src="@drawable/congress_empty"
         android:layout_alignParentTop="true"
         android:adjustViewBounds="true"
@@ -17,6 +18,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="@dimen/splash_header_height"
+        android:id="@+id/splash_overlay"
         android:src="@drawable/gradient"
         android:layout_alignParentTop="true"
         android:adjustViewBounds="true"/>
@@ -24,9 +26,41 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/splash_logo"
         android:src="@drawable/logo"
         android:adjustViewBounds="true"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="36dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textAllCongressmenLink"
+        android:text="@string/all_congressmen_link"
+        android:layout_below="@+id/splash_background"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:textSize="26sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textAllSenatorsLink"
+        android:text="@string/all_senators_link"
+        android:layout_below="@+id/textAllCongressmenLink"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:textSize="26sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textSearchCongressLink"
+        android:text="@string/search_congress_link"
+        android:layout_below="@+id/textAllSenatorsLink"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:textSize="26sp" />
+
 </RelativeLayout>
