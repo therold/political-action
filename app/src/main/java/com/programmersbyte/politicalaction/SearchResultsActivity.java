@@ -27,6 +27,7 @@ public class SearchResultsActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         String name = intent.getStringExtra("name");
+        setTitle(getString(R.string.search_results_title, name));
 
         mSearchResults = Congress.search(name);
         if(mSearchResults.length < 1) {
