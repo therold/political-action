@@ -1,7 +1,9 @@
 package com.programmersbyte.politicalaction;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -18,16 +20,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+
+        mAllCongressmenLink.setOnClickListener(this);
+        mAllSenatorsLink.setOnClickListener(this);
+        mSearchCongressLink.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
+        Log.d("clicked on", String.format("$d", view));
         if(view == mAllCongressmenLink) {
-            // Go to Activity
+            Intent intent = new Intent(MainActivity.this, AllCongressmenActivity.class);
+            startActivity(intent);
         } else if(view == mAllSenatorsLink) {
-            // Go to Activity
+            Intent intent = new Intent(MainActivity.this, AllSenatorsActivity.class);
+            startActivity(intent);
         } else if(view == mSearchCongressLink) {
-            // Go to Activity
+            Intent intent = new Intent(MainActivity.this, SearchCongressActivity.class);
+            startActivity(intent);
         }
     }
 }
