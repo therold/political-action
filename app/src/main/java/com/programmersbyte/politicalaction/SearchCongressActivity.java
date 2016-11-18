@@ -1,5 +1,6 @@
 package com.programmersbyte.politicalaction;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -29,7 +30,9 @@ public class SearchCongressActivity extends AppCompatActivity implements View.On
             if(name.equals("")) {
                 mEditSearchCongress.setError("Field Required!");
             } else {
-                //TODO: Display results
+                Intent intent = new Intent(SearchCongressActivity.this, SearchResultsActivity.class);
+                intent.putExtra("name", name);
+                startActivity(intent);
             }
         }
     }
