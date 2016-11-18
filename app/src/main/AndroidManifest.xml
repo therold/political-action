@@ -38,7 +38,11 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.programmersbyte.politicalaction.MainActivity"></meta-data>
         </activity>
-        <activity android:name=".SearchResultsActivity"></activity>
+        <activity android:name=".SearchResultsActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.programmersbyte.politicalaction.SearchCongressActivity"></meta-data>
+        </activity>
     </application>
 
 </manifest>
