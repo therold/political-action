@@ -6,4 +6,5 @@
     <string name="all_senators_title">All Senators</string>
     <string name="search_congress_link">Search congress</string>
     <string name="search_congress_title">Search Congress</string>
+    <string name="search_congress_instructions">Enter a name below to search Congress.</string>
 </resources>
