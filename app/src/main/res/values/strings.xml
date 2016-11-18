@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">PoliticalAction</string>
     <string name="all_congressmen_link">View all congressmen</string>
+    <string name="all_congressmen_title">All Congressmen</string>
     <string name="all_senators_link">View all senators</string>
+    <string name="all_senators_title">All Senators</string>
     <string name="search_congress_link">Search congress</string>
+    <string name="search_congress_title">Search Congress</string>
 </resources>
