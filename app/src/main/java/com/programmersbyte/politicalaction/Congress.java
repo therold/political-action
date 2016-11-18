@@ -18,12 +18,12 @@ public class Congress {
     public static String[] search(String name) {
         ArrayList<String> foundMembers = new ArrayList<>();
         for(int i = 0; i < mSenators.length; i++){
-            if(mSenators[i].contains(name)) {
+            if(mSenators[i].toUpperCase().contains(name.toUpperCase())) {
                 foundMembers.add(mSenators[i]);
             }
         }
         for(int i = 0; i < mCongressmen.length; i++){
-            if(mCongressmen[i].contains(name)) {
+            if(mCongressmen[i].toUpperCase().contains(name.toUpperCase())) {
                 foundMembers.add(mCongressmen[i]);
             }
         }
