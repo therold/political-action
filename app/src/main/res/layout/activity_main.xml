@@ -8,8 +8,16 @@
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/splash_header_height"
         android:src="@drawable/congress_empty"
-        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/splash_header_height"
+        android:src="@drawable/gradient"
+        android:layout_alignParentTop="true"
         android:adjustViewBounds="true"/>
 </RelativeLayout>
