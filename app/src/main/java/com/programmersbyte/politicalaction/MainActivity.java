@@ -3,7 +3,6 @@ package com.programmersbyte.politicalaction;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -28,7 +27,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
-        Log.d("clicked on", String.format("$d", view));
         if(view == mAllCongressmenLink) {
             Intent intent = new Intent(MainActivity.this, AllCongressmenActivity.class);
             startActivity(intent);
