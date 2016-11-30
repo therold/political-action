@@ -1,6 +1,8 @@
 package com.programmersbyte.politicalaction.ui;
 
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -19,7 +21,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 
-public class LegislatorDetailFragment extends Fragment {
+public class LegislatorDetailFragment extends Fragment implements View.OnClickListener {
     @Bind(R.id.profileImageView) ImageView mImageLabel;
     @Bind(R.id.legislatorNameTextView) TextView mNameLabel;
     @Bind(R.id.partyTextView) TextView mPartyLabel;
@@ -58,7 +60,25 @@ public class LegislatorDetailFragment extends Fragment {
         mPhoneLabel.setText(mLegislator.getPhone());
         mAddressLabel.setText(mLegislator.getOffice());
 
+        mWebsiteLabel.setOnClickListener(this);
+        mPhoneLabel.setOnClickListener(this);
+        mAddressLabel.setOnClickListener(this);
+
         return view;
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (v == mWebsiteLabel) {
+            Intent webIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(mLegislator.getWebsite()));
+            startActivity(webIntent);
+        } else if (v == mPhoneLabel) {
+            Intent phoneIntent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + mLegislator.getPhone()));
+            startActivity(phoneIntent);
+        } else if (v == mAddressLabel) {
+            Intent mapIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("geo:0,0?q=" + mLegislator.getOffice()));
+            startActivity(mapIntent);
+        }
     }
 
 }
