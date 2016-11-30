@@ -13,6 +13,7 @@ import com.programmersbyte.politicalaction.services.SunlightService;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -50,6 +51,7 @@ public class SearchResultsActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call call, Response response) {
                 mLegislators = sunlightService.processResults(response);
+                Collections.sort(mLegislators, Legislator.LegislatorNameComparator);
                 SearchResultsActivity.this.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
