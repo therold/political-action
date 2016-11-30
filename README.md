@@ -21,13 +21,6 @@ _All of the above can be accomplished with the [Sunlight Congress API](https://s
 
 ## Setup/Installation Requirements
 
-* This project requires an API Key from Sunlight Congress.
-  * If you do not yet have an API Key from Sunlight Congress, please [register](http://services.sunlightlabs.com/accounts/register/) now.
-  * Open political-action/gradle.properties in your favorite text editor.
-  * Find the line that appears like the following:
-    * SunlightAPIKey = "YOUR-API-KEY-HERE"
-  * Replace YOUR-API-KEY-HERE with your actual API Key from Sunglight Congress.
-
 * Clone project from GitHub:
   * git clone https://github.com/therold/political-action.git
 * Open Android Studio.
