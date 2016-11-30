@@ -138,6 +138,10 @@ public class Legislator {
         return mLastName;
     }
 
+    public String getFullName() {
+        return mFirstName + " " + mLastName;
+    }
+
     public String getNickname() {
         return mNickname;
     }
