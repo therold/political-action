@@ -1,12 +1,15 @@
-package com.programmersbyte.politicalaction;
+package com.programmersbyte.politicalaction.ui;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.programmersbyte.politicalaction.R;
+import com.programmersbyte.politicalaction.models.Legislator;
+import com.programmersbyte.politicalaction.services.SunlightService;
+
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import butterknife.Bind;

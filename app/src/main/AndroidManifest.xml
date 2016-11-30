@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.MainActivity"
             android:theme="@style/NoActionBarTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,30 +20,30 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".AllCongressmenActivity"
+            android:name=".ui.AllCongressmenActivity"
             android:label="@string/all_congressmen_title">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.programmersbyte.politicalaction.MainActivity"></meta-data>
+                android:value=".ui.MainActivity"></meta-data>
         </activity>
         <activity
-            android:name=".AllSenatorsActivity"
+            android:name=".ui.AllSenatorsActivity"
             android:label="@string/all_senators_title">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.programmersbyte.politicalaction.MainActivity"></meta-data>
+                android:value=".ui.MainActivity"></meta-data>
         </activity>
         <activity
-            android:name=".SearchCongressActivity"
+            android:name=".ui.SearchCongressActivity"
             android:label="@string/search_congress_title">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.programmersbyte.politicalaction.MainActivity"></meta-data>
+                android:value=".ui.MainActivity"></meta-data>
         </activity>
-        <activity android:name=".SearchResultsActivity">
+        <activity android:name=".ui.SearchResultsActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.programmersbyte.politicalaction.SearchCongressActivity"></meta-data>
+                android:value=".ui.SearchCongressActivity"></meta-data>
         </activity>
     </application>
 

@@ -1,4 +1,7 @@
-package com.programmersbyte.politicalaction;
+package com.programmersbyte.politicalaction.services;
+
+import com.programmersbyte.politicalaction.Constants;
+import com.programmersbyte.politicalaction.models.Legislator;
 
 import org.json.JSONArray;
 import org.json.JSONException;

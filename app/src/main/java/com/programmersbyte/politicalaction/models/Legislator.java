@@ -1,4 +1,4 @@
-package com.programmersbyte.politicalaction;
+package com.programmersbyte.politicalaction.models;
 
 public class Legislator {
     private String mBioguideId;
