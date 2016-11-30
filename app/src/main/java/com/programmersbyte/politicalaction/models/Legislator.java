@@ -1,5 +1,8 @@
 package com.programmersbyte.politicalaction.models;
 
+import org.parceler.Parcel;
+
+@Parcel
 public class Legislator {
     private String mBioguideId;
     private boolean mInOffice;
@@ -28,6 +31,8 @@ public class Legislator {
     private String mTwitterId;
     private String mYoutubeId;
     private String mFacebookId;
+
+    public Legislator() {}
 
     public Legislator(String bioguideId, boolean inOffice, String party, String gender, String state,
                         String stateName, Integer district, String title, String chamber,
