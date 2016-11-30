@@ -4,7 +4,7 @@
     android:id="@+id/activity_all_senators"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.AllSenatorsActivity">
+    tools:context=".ui.LegislatorListActivity">
 
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"

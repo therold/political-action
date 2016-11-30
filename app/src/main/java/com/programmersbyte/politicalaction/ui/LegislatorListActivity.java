@@ -1,11 +1,11 @@
 package com.programmersbyte.politicalaction.ui;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 
 import com.programmersbyte.politicalaction.R;
 import com.programmersbyte.politicalaction.adapters.LegislatorListAdapter;
@@ -21,9 +21,8 @@ import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
 
-public class AllSenatorsActivity extends AppCompatActivity {
-    public static final String TAG = AllSenatorsActivity.class.getSimpleName();
-//    @Bind(R.id.senatorsListView) ListView mListView;
+public class LegislatorListActivity extends AppCompatActivity {
+    public static final String TAG = LegislatorListActivity.class.getSimpleName();
     @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
     private LegislatorListAdapter mAdapter;
     public ArrayList<Legislator> mLegislators = new ArrayList<>();
@@ -31,13 +30,16 @@ public class AllSenatorsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_all_senators);
+        setContentView(R.layout.activity_legislator_list);
         ButterKnife.bind(this);
 
-        getSenators("senate");
+        Intent intent = getIntent();
+        String chamber = intent.getStringExtra("chamber");
+        this.setTitle(chamber);
+        getLegislatorsByChamber(chamber);
     }
 
-    private void getSenators(String chamber) {
+    private void getLegislatorsByChamber(String chamber) {
         final SunlightService sunlightService = new SunlightService();
         sunlightService.findLegislators(chamber, new Callback() {
             @Override
@@ -48,22 +50,16 @@ public class AllSenatorsActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call call, Response response) {
                 mLegislators = sunlightService.processResults(response);
-                AllSenatorsActivity.this.runOnUiThread(new Runnable() {
+                LegislatorListActivity.this.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        mAdapter = new LegislatorListAdapter(getApplicationContext(), mLegislators);
-                        mRecyclerView.setAdapter(mAdapter);
-                        RecyclerView.LayoutManager layoutManager =
-                                new LinearLayoutManager(AllSenatorsActivity.this);
-                        mRecyclerView.setLayoutManager(layoutManager);
-                        mRecyclerView.setHasFixedSize(true);
+                    mAdapter = new LegislatorListAdapter(getApplicationContext(), mLegislators);
+                    mRecyclerView.setAdapter(mAdapter);
+                    RecyclerView.LayoutManager layoutManager =
+                            new LinearLayoutManager(LegislatorListActivity.this);
+                    mRecyclerView.setLayoutManager(layoutManager);
+                    mRecyclerView.setHasFixedSize(true);
 
-//                        String[] legislatorNames = new String[mLegislators.size()];
-//                        for(int i = 0; i < legislatorNames.length; i++) {
-//                            legislatorNames[i] = mLegislators.get(i).getFirstName() + " " + mLegislators.get(i).getLastName() + " - " + mLegislators.get(i).getChamber();
-//                        }
-//                        ArrayAdapter adapter = new ArrayAdapter(AllSenatorsActivity.this, android.R.layout.simple_list_item_1, legislatorNames);
-//                        mListView.setAdapter(adapter);
                     }
                 });
             }

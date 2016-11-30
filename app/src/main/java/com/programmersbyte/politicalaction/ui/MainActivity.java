@@ -30,10 +30,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         if(view == mAllCongressmenLink) {
-            Intent intent = new Intent(MainActivity.this, AllCongressmenActivity.class);
+            Intent intent = new Intent(MainActivity.this, LegislatorListActivity.class);
+            intent.putExtra("chamber", "house");
             startActivity(intent);
         } else if(view == mAllSenatorsLink) {
-            Intent intent = new Intent(MainActivity.this, AllSenatorsActivity.class);
+            Intent intent = new Intent(MainActivity.this, LegislatorListActivity.class);
+            intent.putExtra("chamber", "senate");
             startActivity(intent);
         } else if(view == mSearchCongressLink) {
             Intent intent = new Intent(MainActivity.this, SearchCongressActivity.class);
