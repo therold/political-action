@@ -6,24 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".ui.SearchResultsActivity">
 
-    <TextView
+    <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textSearchName"
-        android:textSize="@dimen/default_text_size"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textSearchName"
-        android:id="@+id/textSearchError"
-        android:textSize="@dimen/default_text_size"/>
-
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/searchListView"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_height="match_parent"
+        android:id="@+id/recyclerView"/>
 
 </RelativeLayout>
