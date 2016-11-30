@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.programmersbyte.politicalaction">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/logo"
@@ -24,27 +24,28 @@
             android:label="@string/all_congressmen_title">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.MainActivity"></meta-data>
+                android:value=".ui.MainActivity" />
         </activity>
         <activity
             android:name=".ui.AllSenatorsActivity"
             android:label="@string/all_senators_title">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.MainActivity"></meta-data>
+                android:value=".ui.MainActivity" />
         </activity>
         <activity
             android:name=".ui.SearchCongressActivity"
             android:label="@string/search_congress_title">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.MainActivity"></meta-data>
+                android:value=".ui.MainActivity" />
         </activity>
         <activity android:name=".ui.SearchResultsActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.SearchCongressActivity"></meta-data>
+                android:value=".ui.SearchCongressActivity" />
         </activity>
+        <activity android:name=".ui.LegislatorDetailActivity"></activity>
     </application>
 
 </manifest>
