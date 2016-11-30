@@ -2,6 +2,8 @@ package com.programmersbyte.politicalaction.models;
 
 import org.parceler.Parcel;
 
+import java.util.Comparator;
+
 @Parcel
 public class Legislator {
     private String mBioguideId;
@@ -181,5 +183,20 @@ public class Legislator {
     public String getFacebookId() {
         return mFacebookId;
     }
+
+    public static Comparator<Legislator> LegislatorNameComparator = new Comparator<Legislator>() {
+        public int compare(Legislator legislator1, Legislator legislator2) {
+            String legislatorLastName1 = legislator1.getLastName().toUpperCase();
+            String legislatorLastName2 = legislator2.getLastName().toUpperCase();
+            String legislatorFirstName1 = legislator1.getFirstName().toUpperCase();
+            String legislatorFirstName2 = legislator2.getFirstName().toUpperCase();
+
+            if(legislatorLastName1.equals(legislatorLastName2)) {
+                return legislatorFirstName1.compareTo(legislatorFirstName2);
+            } else {
+                return legislatorLastName1.compareTo(legislatorLastName2);
+            }
+        }
+    };
 
 }
