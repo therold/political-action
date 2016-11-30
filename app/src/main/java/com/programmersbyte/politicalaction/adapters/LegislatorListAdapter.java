@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.programmersbyte.politicalaction.R;
 import com.programmersbyte.politicalaction.models.Legislator;
 import com.programmersbyte.politicalaction.ui.LegislatorDetailActivity;
+import com.squareup.picasso.Picasso;
 
 import org.parceler.Parcels;
 
@@ -50,6 +51,7 @@ public class LegislatorListAdapter extends RecyclerView.Adapter<LegislatorListAd
         @Bind(R.id.legislatorFullNameTextView) TextView mFullNameText;
         @Bind(R.id.partyTextView) TextView mPartyText;
         @Bind(R.id.chamberTextView) TextView mChamberText;
+        @Bind(R.id.legislatorImageView) ImageView mProfileImageView;
 
         private Context mContext;
 
@@ -73,6 +75,7 @@ public class LegislatorListAdapter extends RecyclerView.Adapter<LegislatorListAd
             mFullNameText.setText(legislator.getFirstName() + " " + legislator.getLastName());
             mPartyText.setText(legislator.getParty());
             mChamberText.setText(legislator.getChamber());
+            Picasso.with(mContext).load(legislator.getProfileImgUrl()).into(mProfileImageView);
         }
     }
 }

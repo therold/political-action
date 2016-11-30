@@ -15,7 +15,8 @@
             android:layout_height="180dp"
             android:id="@+id/profileImageView"
             android:src="@drawable/profile"
-            android:scaleType="centerCrop" />
+            android:scaleType="fitCenter"
+            android:background="#000"/>
 
         <RelativeLayout
             android:layout_width="match_parent"

@@ -16,6 +16,7 @@ import org.parceler.Parcels;
 
 import com.programmersbyte.politicalaction.R;
 import com.programmersbyte.politicalaction.models.Legislator;
+import com.squareup.picasso.Picasso;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -30,6 +31,8 @@ public class LegislatorDetailFragment extends Fragment implements View.OnClickLi
     @Bind(R.id.phoneTextView) TextView mPhoneLabel;
     @Bind(R.id.addressTextView) TextView mAddressLabel;
     @Bind(R.id.saveLegislatorButton) Button mSaveLegislatorButton;
+    private static final int MAX_WIDTH = 400;
+    private static final int MAX_HEIGHT = 300;
 
     private Legislator mLegislator;
 
@@ -52,6 +55,12 @@ public class LegislatorDetailFragment extends Fragment implements View.OnClickLi
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_legislator_detail, container, false);
         ButterKnife.bind(this, view);
+
+        Picasso.with(view.getContext())
+                .load(mLegislator.getProfileImgUrl())
+                .resize(MAX_WIDTH, MAX_HEIGHT)
+                .centerCrop()
+                .into(mImageLabel);
 
         mNameLabel.setText(mLegislator.getFullName());
         mPartyLabel.setText(mLegislator.getParty());

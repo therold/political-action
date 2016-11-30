@@ -184,6 +184,11 @@ public class Legislator {
         return mFacebookId;
     }
 
+    public String getProfileImgUrl() {
+        String initial = Character.toString(mBioguideId.charAt(0));
+        return "http://bioguide.congress.gov/bioguide/photo/" + initial + "/" + mBioguideId + ".jpg";
+    }
+
     public static Comparator<Legislator> LegislatorNameComparator = new Comparator<Legislator>() {
         public int compare(Legislator legislator1, Legislator legislator2) {
             String legislatorLastName1 = legislator1.getLastName().toUpperCase();
