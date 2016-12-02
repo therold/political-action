@@ -28,9 +28,9 @@ public class LegislatorDetailFragment extends Fragment implements View.OnClickLi
     @Bind(R.id.partyTextView) TextView mPartyLabel;
     @Bind(R.id.chamberTextView) TextView mChamberLabel;
     @Bind(R.id.websiteTextView) TextView mWebsiteLabel;
+    @Bind(R.id.twitterTextView) TextView mTwitterLabel;
     @Bind(R.id.phoneTextView) TextView mPhoneLabel;
     @Bind(R.id.addressTextView) TextView mAddressLabel;
-    @Bind(R.id.saveLegislatorButton) Button mSaveLegislatorButton;
     private static final int MAX_WIDTH = 400;
     private static final int MAX_HEIGHT = 300;
 
@@ -63,9 +63,10 @@ public class LegislatorDetailFragment extends Fragment implements View.OnClickLi
                 .into(mImageLabel);
 
         mNameLabel.setText(mLegislator.getFullName());
-        mPartyLabel.setText(mLegislator.getParty());
+        mPartyLabel.setText(mLegislator.getParty() + " - " + mLegislator.getState());
         mChamberLabel.setText(mLegislator.getChamber());
         mWebsiteLabel.setText(mLegislator.getWebsite());
+        mTwitterLabel.setText("@" + mLegislator.getTwitterId());
         mPhoneLabel.setText(mLegislator.getPhone());
         mAddressLabel.setText(mLegislator.getOffice());
 

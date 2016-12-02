@@ -73,7 +73,7 @@ public class LegislatorListAdapter extends RecyclerView.Adapter<LegislatorListAd
 
         public void bindLegislator(Legislator legislator) {
             mFullNameText.setText(legislator.getFirstName() + " " + legislator.getLastName());
-            mPartyText.setText(legislator.getParty());
+            mPartyText.setText(legislator.getParty() + " - " + legislator.getState());
             mChamberText.setText(legislator.getChamber());
             Picasso.with(mContext).load(legislator.getProfileImgUrl()).into(mProfileImageView);
         }

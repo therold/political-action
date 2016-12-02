@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/PoliticalAction.iml" filepath="$PROJECT_DIR$/PoliticalAction.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/political-action.iml" filepath="$PROJECT_DIR$/political-action.iml" />
     </modules>

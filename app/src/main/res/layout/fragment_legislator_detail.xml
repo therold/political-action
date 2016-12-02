@@ -72,7 +72,6 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_above="@+id/saveLegislatorButton"
                 android:paddingLeft="30dp"
                 android:paddingTop="20dp"
                 android:paddingRight="30dp">
@@ -93,7 +92,20 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="(503) 223-1282"
+                    android:text="View on twitter"
+                    android:id="@+id/twitterTextView"
+                    android:drawableLeft="@drawable/twitter"
+                    android:drawablePadding="4dp"
+                    android:textColor="@color/colorIcons"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="(503) 555-1234"
                     android:id="@+id/phoneTextView"
                     android:drawableLeft="@drawable/ic_local_phone_white_24dp"
                     android:drawablePadding="4dp"
@@ -106,7 +118,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="123 SW Best Ever Ave. Portland, Oregon, 97222"
+                    android:text="Office Address"
                     android:drawableLeft="@drawable/ic_map_white_24dp"
                     android:drawablePadding="4dp"
                     android:id="@+id/addressTextView"
@@ -117,16 +129,6 @@
                     android:gravity="center_vertical"/>
 
             </LinearLayout>
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Save Legislator"
-                android:id="@+id/saveLegislatorButton"
-                android:layout_alignParentBottom="true"
-                android:background="@color/colorAccent"
-                android:textColor="@color/colorIcons"
-                android:textSize="15sp" />
         </RelativeLayout>
     </LinearLayout>
 
