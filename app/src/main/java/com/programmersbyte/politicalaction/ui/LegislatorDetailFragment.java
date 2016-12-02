@@ -71,6 +71,7 @@ public class LegislatorDetailFragment extends Fragment implements View.OnClickLi
         mAddressLabel.setText(mLegislator.getOffice());
 
         mWebsiteLabel.setOnClickListener(this);
+        mTwitterLabel.setOnClickListener(this);
         mPhoneLabel.setOnClickListener(this);
         mAddressLabel.setOnClickListener(this);
 
@@ -88,6 +89,16 @@ public class LegislatorDetailFragment extends Fragment implements View.OnClickLi
         } else if (v == mAddressLabel) {
             Intent mapIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("geo:0,0?q=" + mLegislator.getOffice()));
             startActivity(mapIntent);
+        } else if (v == mTwitterLabel) {
+            Intent intent = null;
+            try {
+                this.getActivity().getPackageManager().getPackageInfo("com.twitter.android", 0);
+                intent = new Intent(Intent.ACTION_VIEW, Uri.parse("twitter://user?user_id=" + mLegislator.getTwitterId()));
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            } catch (Exception e) {
+                intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com/" + mLegislator.getTwitterId()));
+            }
+            startActivity(intent);
         }
     }
 
